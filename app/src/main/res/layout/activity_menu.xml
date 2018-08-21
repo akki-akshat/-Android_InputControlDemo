@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Menu">
+    tools:context=".Menu"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/textView3"
@@ -23,7 +24,7 @@
         android:id="@+id/fragment"
         android:name="com.christ.inputcontroldemo.Fveg"
         android:layout_width="347dp"
-        android:layout_height="342dp"
+        android:layout_height="245dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -31,61 +32,63 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.371" />
 
-    <android.support.constraint.ConstraintLayout
+    <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="386dp"
-        android:layout_height="87dp"
+        android:layout_width="337dp"
+        android:layout_height="52dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="50dp"
         android:layout_marginTop="8dp"
-        android:orientation="vertical"
+        android:checkedButton="@+id/vegB"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.091">
+        app:layout_constraintVertical_bias="0.085">
+
+        <RadioButton
+            android:id="@+id/vegB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="VEG"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <!--tools:layout_conversion_absoluteHeight="31dp"-->
+        <!--tools:layout_conversion_absoluteWidth="59dp"-->
+        <!--/>-->
 
         <RadioButton
             android:id="@+id/nonvegB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="63dp"
-            android:layout_marginEnd="168dp"
-            android:layout_marginStart="125dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="105dp"
+            android:layout_marginTop="8dp"
             android:baselineAligned="false"
             android:text="NON VEG"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/vegB"
-            app:layout_constraintTop_toTopOf="parent"
+
             app:layout_constraintVertical_bias="0.0"
             tools:layout_conversion_absoluteHeight="32dp"
             tools:layout_conversion_absoluteWidth="92dp" />
 
-        <RadioButton
-            android:id="@+id/vegB"
-            android:layout_width="98dp"
-            android:layout_height="32dp"
-            android:layout_marginBottom="63dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="46dp"
-            android:text="VEG"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_conversion_absoluteHeight="31dp"
-            tools:layout_conversion_absoluteWidth="59dp" />
-
-    </android.support.constraint.ConstraintLayout>
+    </RadioGroup>
 
     <Spinner
         android:id="@+id/spinner"
@@ -95,11 +98,47 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:entries="@array/coldDrink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fragment"
         app:layout_constraintVertical_bias="0.214" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Finish"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Drinks"
+        app:layout_constraintBottom_toTopOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragment" />
 
 </android.support.constraint.ConstraintLayout>
